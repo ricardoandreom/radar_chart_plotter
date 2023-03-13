@@ -10,6 +10,7 @@ from mplsoccer import PyPizza, add_image, FontManager
 import matplotlib.font_manager
 from IPython.core.display import HTML
 from pathlib import Path
+import lxml
 
 font_normal = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
                           'Roboto%5Bwdth,wght%5D.ttf')
