@@ -11,7 +11,7 @@ import matplotlib.font_manager
 from IPython.core.display import HTML
 from pathlib import Path
 import app_functions as app
-import lmxl
+import lxml
 
 # data urls list
 url_standard = 'https://fbref.com/en/comps/Big5/stats/players/Big-5-European-Leagues-Stats#stats_standard'
