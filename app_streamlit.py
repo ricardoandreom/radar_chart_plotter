@@ -114,7 +114,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Creating a slider that allows user to select an integer between 1 and max value minus 5
-nineties_played = st.sidebar.slider("**Select mininum 90s played:**", 1, max_value - 5, 1)
+nineties_played = st.sidebar.slider("**Select mininum 90s played:**", 1, max_value - 4, 1)
 
 player = st.sidebar.selectbox("**Name of the player:**", df['Player'])
 
