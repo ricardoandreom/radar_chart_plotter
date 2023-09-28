@@ -123,7 +123,7 @@ st.sidebar.write('Note: No radar charts displayed for goalkeepers yet!')
 
 # portfolio url
 st.sidebar.write("#")
-st.sidebar.write('**Made by @ricardoandreom 🚀⚽')
+st.sidebar.write('**Made by @ricardoandreom 🚀⚽**')
 cols = st.sidebar.columns(len(SOCIAL_MEDIA))
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
     cols[index].write(f"**[{platform}]({link})\n**")
