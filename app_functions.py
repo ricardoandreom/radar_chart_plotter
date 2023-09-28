@@ -279,7 +279,7 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
     fig.text(0.5, 0.955, player_position + " player stats/90" + "   | 90s played:  " +
              str(df.set_index('Player').loc[player, '90s']) +
              "    | Age:  " + str(int(df.set_index('Player').loc[player, 'Age'])) +
-             '   | Season 2022/23', size=20, ha='center', fontproperties=font_bold.prop, color="black")
+             '   | Season 2023/24', size=20, ha='center', fontproperties=font_bold.prop, color="black")
 
     # add text
     text1 = "Only players with >=" + str(nineties_played) + "'s played"
