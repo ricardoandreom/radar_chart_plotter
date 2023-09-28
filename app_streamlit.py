@@ -82,7 +82,7 @@ df = app.edit_df(df)
 
 # minutes filter
 # Getting the max value for the slider
-max_value = int(df['90s'].max() - 5)
+max_value = int(df['90s'].max()) # - 5)
 
 # APP TITLE
 st.title('Radar chart plotter ⚽📈')
