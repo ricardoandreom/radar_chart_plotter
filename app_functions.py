@@ -301,7 +301,7 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
 
     # add image
     ax_image = add_image(
-        circle_logo, fig, left=0.417, bottom=0.35, width=0.1, height=.1
+        circle_logo, fig, left=0.55, bottom=0.60, width=0.1, height=.1
     )
 
     # plot image
