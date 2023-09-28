@@ -31,7 +31,8 @@ black_logo_url = "https://raw.githubusercontent.com/ricardoandreom/Data/master/I
 
 # LANDING PAGE LINK
 SOCIAL_MEDIA = {
-    "Portfolio/Landing page": "https://ricardo-marques-digital-cv.streamlit.app/"
+    "Portfolio/Landing page": "https://ricardoandreom.github.io/ricardo_portfolio_page/",
+    "Digital CV": "https://ricardo-marques-digital-cv.streamlit.app/"
 }
 
 # set default colors
