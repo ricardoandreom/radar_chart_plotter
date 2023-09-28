@@ -31,7 +31,7 @@ black_logo_url = "https://raw.githubusercontent.com/ricardoandreom/Data/master/I
 
 # LANDING PAGE LINK
 SOCIAL_MEDIA = {
-    "Portfolio/Landing page": "https://ricardoandreom.github.io/ricardo_portfolio_page/",
+    "Portfolio page": "https://ricardoandreom.github.io/ricardo_portfolio_page/",
     "Digital CV": "https://ricardo-marques-digital-cv.streamlit.app/"
 }
 
@@ -126,7 +126,7 @@ st.sidebar.write("#")
 st.sidebar.write('**Made by @ricardoandreom 🚀⚽**')
 cols = st.sidebar.columns(len(SOCIAL_MEDIA))
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-    cols[index].write(f"**[{platform}]({link})\n**")
+    cols[index].write(f"[{platform}]({link})\n")
 
 #############################################################################################
 
