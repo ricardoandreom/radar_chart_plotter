@@ -59,7 +59,7 @@ df_standard = app.get_df(url_standard, ['Per 90 Minutes G-PK'])
 df_shotcreation = app.get_df(url_shotcreation, ['SCA SCA'])
 df_misc = app.get_df(url_misc, ['Aerial Duels Won%', 'Performance Fld', 'Performance Crs', 'Performance Recov'])
 df_shoot = app.get_df(url_shoot, ['Expected npxG', 'Expected npxG/Sh', 'Standard SoT'])
-df_passing = app.get_df(url_passing, ['Total Cmp', 'KP', 'xA', '1/3', 'Long Att', 'PrgP', 'Total Cmp%'])
+df_passing = app.get_df(url_passing, ['Total Cmp', 'KP', 'Expected xA', '1/3', 'Long Att', 'PrgP', 'Total Cmp%'])
 df_def = app.get_df(url_def, ['Tkl+Int', 'Blocks Sh', 'Clr'])
 df_poss = app.get_df(url_poss, ['Take-Ons Att', 'Take-Ons Succ%', 'Carries CPA', 'Receiving Rec', 'Receiving PrgR',
                                 'Carries PrgC'])
