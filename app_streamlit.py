@@ -176,4 +176,4 @@ df_plot_app['90s'] = df_plot_app['90s'].round(1)
 df_plot_app['League'] = df_plot_app['League'].fillna('Bundesliga')
 df_plot_app[int_columns] = df_plot_app[int_columns].astype(int)
 
-st.dataframe(df_plot_app)
+#st.dataframe(df_plot_app)
