@@ -177,3 +177,5 @@ df_plot_app['League'] = df_plot_app['League'].fillna('Bundesliga')
 df_plot_app[int_columns] = df_plot_app[int_columns].astype(int)
 
 #st.dataframe(df_plot_app)
+
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'Z8Z4Q78F7');kofiwidget2.draw();</script> 
