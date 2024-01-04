@@ -12,14 +12,9 @@ from IPython.core.display import HTML
 from pathlib import Path
 import lxml
 
-'''
-font_normal = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
-                          'Roboto%5Bwdth,wght%5D.ttf')
-font_italic = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
-                          'Roboto-Italic%5Bwdth,wght%5D.ttf')
-font_bold = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/robotoslab/'
-                        'RobotoSlab%5Bwght%5D.ttf')
-'''
+font_normal = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[0])
+font_italic = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[1])
+font_bold = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[2])
 
 # default fontname
 def make_html(fontname):
@@ -221,81 +216,64 @@ def templates_position_text_colors(player_position):
         text_colors = ["#000000"] * 10 + ["black"] * 5
 
 
-# create radar chart plot
-import pygame
-import matplotlib.font_manager as fm
 
 def show_radar_chart(player_values, df, player_position, player, nineties_played, circle_logo):
-    # Verificar as fontes disponíveis no sistema
-    font_list = [f.name for f in fm.fontManager.ttflist]
-
-    # Escolher uma fonte disponível (pode ser modificada)
-    font_name = 'Arial'  # Por padrão, escolha Arial, por exemplo
-
-    # Verificar se a fonte escolhida está disponível, caso contrário, use uma padrão
-    if font_name not in font_list:
-        font_name = 'Arial'  # Fonte padrão
-
-    # Use fonte escolhida
-    font = pygame.font.SysFont(font_name, 18)  # Escolha o tamanho da fonte que você precisa
-
     # instantiate PyPizza class
     baker = PyPizza(
-        params=templates_position_params_legend(player_position),  # list of parameters
-        background_color="white",  # background color
-        straight_line_color="white",  # color for straight lines
-        straight_line_lw=2.5,  # linewidth for straight lines
-        last_circle_lw=0,  # linewidth of last circle
-        other_circle_ls="-.",  # linewidth for other circles
+        params=templates_position_params_legend(player_position),                  # list of parameters
+        background_color="white",         # background color
+        straight_line_color="white",      # color for straight lines
+        straight_line_lw=2.5,             # linewidth for straight lines
+        last_circle_lw=0,                 # linewidth of last circle
+        other_circle_ls="-.",             # linewidth for other circles
         other_circle_lw=2,
-        inner_circle_size=19.5  # size of inner circle
+        inner_circle_size=19.5            # size of inner circle
     )
 
     # plot pizza
     fig, ax = baker.make_pizza(
-        player_values,  # list of values
-        figsize=(12, 12),  # adjust figsize according to your need
-        color_blank_space="same",  # use same color to fill blank space
-        slice_colors=templates_position_slice_colors(player_position),  # color for individual slices
-        value_colors=templates_position_text_colors(player_position),  # color for the value-text
-        value_bck_colors=templates_position_slice_colors(player_position),  # color for the blank spaces
-        blank_alpha=0.2,  # alpha for blank-space colors
+        player_values,                          # list of values
+        figsize=(12, 12),                       # adjust figsize according to your need
+        color_blank_space="same",               # use same color to fill blank space
+        slice_colors=templates_position_slice_colors(player_position),       # color for individual slices
+        value_colors=templates_position_text_colors(player_position),                   # color for the value-text
+        value_bck_colors=templates_position_slice_colors(player_position),   # color for the blank spaces
+        blank_alpha=0.2,                        # alpha for blank-space colors
         kwargs_slices=dict(
             edgecolor="#F2F2F2", zorder=2, linewidth=1
-        ),  # values to be used when plotting slices
+        ),                                      # values to be used when plotting slices
         kwargs_params=dict(
             color="#000000", fontsize=18,
-            fontproperties=font, va="center"
-        ),  # values to be used when adding parameter
+            fontproperties=font_bold.prop, va="center"
+        ),                                      # values to be used when adding parameter
         kwargs_values=dict(
             color="black", fontsize=15,
-            fontproperties=font, zorder=3,
+            fontproperties=font_bold.prop, zorder=3,
             bbox=dict(
                 edgecolor="#000000", facecolor="cornflowerblue",
                 boxstyle="round,pad=0.2", lw=2
             )
-        )  # values to be used when adding parameter-values
+        )                                      # values to be used when adding parameter-values
     )
 
     # add title
     fig.text(
         0.515, 1.04, player + " - " + df.set_index('Player').loc[player, 'Squad'], size=40,
-        ha="center", fontproperties=font, fontweight='heavy', color="black"
+        ha="center", fontproperties=font_bold.prop, fontweight='heavy', color="black"
     )
-
     # add subtitle
     fig.text(
         0.515, 0.995,
         "Percentile Rank vs Top-Five League " + player_position + "s",
         size=22,
-        ha="center", fontproperties=font, color="black"
+        ha="center", fontproperties=font_bold.prop, color="black"
     )
 
     # add text
     fig.text(0.5, 0.955, player_position + " player stats/90" + "   | 90s played:  " +
              str(df.set_index('Player').loc[player, '90s']) +
              "    | Age:  " + str(int(df.set_index('Player').loc[player, 'Age'])) +
-             '   | Season 2023/24', size=20, ha='center', fontproperties=font, color="black")
+             '   | Season 2023/24', size=20, ha='center', fontproperties=font_bold.prop, color="black")
 
     # add text
     text1 = "Only players with >=" + str(nineties_played) + "'s played"
@@ -304,14 +282,14 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
     # add text
     fig.text(
         0.68, 0.02, f"{text1}\n{text2}", size=16,
-        fontproperties=font, color="#000000",
+        fontproperties=font_bold.prop, color="#000000",
         ha="left"
     )
 
     # add text
     fig.text(
         0.05, 0.02, "Made by @ricardoandreom / @HspaceAnalytics", size=12,
-        fontproperties=font, color="black",
+        fontproperties=font_bold.prop, color="black",
         ha="left"
     )
 
