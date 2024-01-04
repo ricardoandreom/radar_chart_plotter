@@ -243,12 +243,10 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
             edgecolor="#F2F2F2", zorder=2, linewidth=1
         ),                                      # values to be used when plotting slices
         kwargs_params=dict(
-            color="#000000", fontsize=18,
-            fontproperties=font_bold.prop, va="center"
+            color="#000000", fontsize=18, va="center"
         ),                                      # values to be used when adding parameter
         kwargs_values=dict(
-            color="black", fontsize=15,
-            fontproperties=font_bold.prop, zorder=3,
+            color="black", fontsize=15,zorder=3,
             bbox=dict(
                 edgecolor="#000000", facecolor="cornflowerblue",
                 boxstyle="round,pad=0.2", lw=2
@@ -259,21 +257,21 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
     # add title
     fig.text(
         0.515, 1.04, player + " - " + df.set_index('Player').loc[player, 'Squad'], size=40,
-        ha="center", fontproperties=font_bold.prop, fontweight='heavy', color="black"
+        ha="center", fontweight='heavy', color="black"
     )
     # add subtitle
     fig.text(
         0.515, 0.995,
         "Percentile Rank vs Top-Five League " + player_position + "s",
         size=22,
-        ha="center", fontproperties=font_bold.prop, color="black"
+        ha="center", color="black"
     )
 
     # add text
     fig.text(0.5, 0.955, player_position + " player stats/90" + "   | 90s played:  " +
              str(df.set_index('Player').loc[player, '90s']) +
              "    | Age:  " + str(int(df.set_index('Player').loc[player, 'Age'])) +
-             '   | Season 2023/24', size=20, ha='center', fontproperties=font_bold.prop, color="black")
+             '   | Season 2023/24', size=20, ha='center', color="black")
 
     # add text
     text1 = "Only players with >=" + str(nineties_played) + "'s played"
@@ -281,15 +279,13 @@ def show_radar_chart(player_values, df, player_position, player, nineties_played
 
     # add text
     fig.text(
-        0.68, 0.02, f"{text1}\n{text2}", size=16,
-        fontproperties=font_bold.prop, color="#000000",
+        0.68, 0.02, f"{text1}\n{text2}", size=16, color="#000000",
         ha="left"
     )
 
     # add text
     fig.text(
-        0.05, 0.02, "Made by @ricardoandreom / @HspaceAnalytics", size=12,
-        fontproperties=font_bold.prop, color="black",
+        0.05, 0.02, "Made by @ricardoandreom / @HspaceAnalytics", size=12, color="black",
         ha="left"
     )
 
