@@ -12,6 +12,7 @@ from IPython.core.display import HTML
 from pathlib import Path
 import lxml
 
+
 font_normal = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
                           'Roboto%5Bwdth,wght%5D.ttf')
 font_italic = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
@@ -23,7 +24,6 @@ font_bold = FontManager('https://raw.githubusercontent.com/google/fonts/main/apa
 # default fontname
 def make_html(fontname):
     return "<p>{font}: <span style='font-family:{font}; font-size: 24px;'>{font}</p>".format(font=fontname)
-
 
 # creating dataframe function
 def get_df(url_df, columns_remaining_list):
