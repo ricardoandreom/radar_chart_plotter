@@ -12,10 +12,6 @@ from IPython.core.display import HTML
 from pathlib import Path
 import lxml
 
-font_normal = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[0])
-font_italic = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[1])
-font_bold = FontManager.FontProperties(fname=fm.findSystemFonts(fontpaths=None, fontext='ttf')[2])
-
 # default fontname
 def make_html(fontname):
     return "<p>{font}: <span style='font-family:{font}; font-size: 24px;'>{font}</p>".format(font=fontname)
