@@ -12,14 +12,6 @@ from IPython.core.display import HTML
 from pathlib import Path
 import lxml
 
-from matplotlib import font_manager
-
-# Listando as fontes disponíveis no sistema
-font_manager.fontManager.ttflist
-
-# Escolhendo uma fonte específica
-plt.rcParams['font.family'] = 'Arial'
-
 '''
 font_normal = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
                           'Roboto%5Bwdth,wght%5D.ttf')
