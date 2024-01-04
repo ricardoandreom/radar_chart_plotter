@@ -43,10 +43,6 @@ background = 'black'
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
 
-'''
-code = "\n".\
-    join([app.make_html(font) for font in sorted(set([f.name for f in matplotlib.font_manager.fontManager.ttflist]))])'''
-
 # creating the stats dfs
 df_standard = app.get_df(url_standard, ['Per 90 Minutes G-PK'])
 df_shotcreation = app.get_df(url_shotcreation, ['SCA SCA'])
