@@ -39,20 +39,13 @@ SOCIAL_MEDIA = {
 text_color = 'white'
 background = 'black'
 
-font_normal = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
-                          'Roboto%5Bwdth,wght%5D.ttf')
-font_italic = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/roboto/'
-                          'Roboto-Italic%5Bwdth,wght%5D.ttf')
-font_bold = FontManager('https://raw.githubusercontent.com/google/fonts/main/apache/robotoslab/'
-                        'RobotoSlab%5Bwght%5D.ttf')
-
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
 
-
+'''
 code = "\n".\
-    join([app.make_html(font) for font in sorted(set([f.name for f in matplotlib.font_manager.fontManager.ttflist]))])
+    join([app.make_html(font) for font in sorted(set([f.name for f in matplotlib.font_manager.fontManager.ttflist]))])'''
 
 # creating the stats dfs
 df_standard = app.get_df(url_standard, ['Per 90 Minutes G-PK'])
