@@ -7,4 +7,3 @@ Pillow==9.4.0
 streamlit==1.17.0
 lxml==4.9.1
 altair==4.1.0
-pygame==2.5.2
